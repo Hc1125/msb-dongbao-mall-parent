@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../../../GitLab/Git代码" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../../../Gitee/dongbao-mall" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>
