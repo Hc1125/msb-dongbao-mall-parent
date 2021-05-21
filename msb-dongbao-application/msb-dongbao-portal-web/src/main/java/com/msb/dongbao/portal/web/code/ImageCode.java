@@ -34,7 +34,7 @@ public class ImageCode {
         Graphics graphics = image.getGraphics();
 
         // 拿笔，涂色，画图形
-        graphics.setColor(new Color(17, 147, 37));
+        graphics.setColor(new Color(255, 255, 255));
 
         // 画矩形
         graphics.fillRect(0, 0, width, height);
@@ -48,11 +48,23 @@ public class ImageCode {
             String s = String.valueOf(random.nextInt(10));
             code += s;
 
-            graphics.setColor(new Color(235, 152, 37));
+            graphics.setColor(new Color(0, 0, 0));
 
             graphics.drawString(s, (width / 6) * i, 40);
-        }
 
+            /*// 划线
+            graphics.setColor(new Color(100, 100, 100));
+            graphics.drawLine((width / 6) * i, 40, (width / 6) * i + 25, 40 - 30);*/
+        }
+        /*// 划线
+        graphics.setColor(new Color(100, 100, 100));
+        for (int i = 0; i < 100; i++) {
+            int x = random.nextInt(width);
+            int y = random.nextInt(height);
+            int x1 = random.nextInt(20);
+            int y1 = random.nextInt(20);
+            graphics.drawLine(x, y, x + x1, y + y1);
+        }*/
         // 收笔
         graphics.dispose();
 
