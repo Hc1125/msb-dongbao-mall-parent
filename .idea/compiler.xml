@@ -22,10 +22,10 @@
         <module name="msb-dongbao-manager-web" />
         <module name="msb-dongbao-oms-api" />
         <module name="msb-dongbao-ums" />
-        <module name="msb-dongbao-sms" />
+        <module name="msb-dongbao-cart-api" />
         <module name="msb-dongbao-pms-api" />
         <module name="msb-dongbao-cms-api" />
-        <module name="msb-dongbao-cart-api" />
+        <module name="msb-dongbao-sms" />
         <module name="msb-dongbao-oms" />
         <module name="msb-dongbao-dictionary-api" />
       </profile>

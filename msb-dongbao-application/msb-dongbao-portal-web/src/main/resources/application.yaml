@@ -6,6 +6,18 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   profiles:
     active: dev
+  redis:
+    database: 0
+    host: 192.168.144.200
+    port: 6379
+    password: 123456
+    #      jedis:
+    #        pool:
+    #          max-active: 8
+    #          max-wait: -1
+    #          max-idle: 8
+    #          min-idle: 0
+    timeout: 500
 
 mybatis-plus:
   configuration:
@@ -17,3 +29,23 @@ mybatis-plus:
   mapper-locations:
   - classpath*:/com/msb/dongbao/ums/mapper/xml/*.xml
   type-aliases-package: com.msb.dongbao.ums.entity
+
+kaptcha:
+  height: 50
+  width: 200
+  content:
+    length: 5
+    source: abcdefghjklmnopqrstuvwxyz23456789
+    space: 2
+  font:
+    color: black
+    name: Arial
+    size: 40
+  background-color:
+    from: red
+    to: white
+  border:
+    enabled: true
+    color: black
+    thickness: 1
+

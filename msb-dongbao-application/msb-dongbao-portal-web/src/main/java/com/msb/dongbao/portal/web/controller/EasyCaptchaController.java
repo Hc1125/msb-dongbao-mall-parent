@@ -88,7 +88,6 @@ public class EasyCaptchaController {
         String sessionId = request.getSession().getId();
         String c = stringRedisTemplate.opsForValue().get(sessionId);
 
-
         if (verifyCode.equals(c)) {
             HappyCaptcha.remove(request);
             return "验证码校验通过";
