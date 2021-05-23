@@ -24,15 +24,30 @@ public class UserMemberController {
         return "hello";
     }
 
+    @GetMapping("/get-captcha")
+    public String getCaptcha() {
+        return "获取验证码";
+    }
+
+    /**
+     * 注册：传入验证码信息
+     * @param umsMemberRegisterParamDTO
+     * @return
+     */
     @PostMapping("/register")
     public ResultWrapper register(@RequestBody @Valid UmsMemberRegisterParamDTO umsMemberRegisterParamDTO) {
         return umsMemberService.register(umsMemberRegisterParamDTO);
     }
 
+
+
     @PostMapping("/login")
     public ResultWrapper login(@RequestBody UmsMemberLoginParamDTO umsMemberLoginParamDTO) {
         return umsMemberService.login(umsMemberLoginParamDTO);
     }
+
+
+
 
     @PostMapping("/edit")
     @TokenCheck
@@ -41,15 +56,4 @@ public class UserMemberController {
         return umsMemberService.edit(umsMember);
     }
 
-    /**
-     * 这是测试的，系统中的任意一个几口
-     * 修改用户信息
-     * @param token
-     * @return
-     */
-    @GetMapping("/test-verify")
-    public ResultWrapper verify(String token) {
-        System.out.println("正常业务");
-        return ResultWrapper.getSuccessBuilder().build();
-    }
 }

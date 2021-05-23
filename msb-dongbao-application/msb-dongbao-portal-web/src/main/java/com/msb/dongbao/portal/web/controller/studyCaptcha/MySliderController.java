@@ -1,8 +1,7 @@
-package com.msb.dongbao.portal.web.controller;
+package com.msb.dongbao.portal.web.controller.studyCaptcha;
 
 import com.msb.dongbao.portal.web.util.SliderUtil;
 import com.msb.dongbao.portal.web.util.VerificationVO;
-import com.ramostear.captcha.HappyCaptcha;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

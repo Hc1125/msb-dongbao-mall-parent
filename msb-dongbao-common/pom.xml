@@ -6,16 +6,24 @@
         <artifactId>msb-dongbao-mall-parent</artifactId>
         <groupId>com.msb</groupId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
+
 
     <artifactId>msb-dongbao-common</artifactId>
     <groupId>com.msb</groupId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <modules>
         <module>msb-dongbao-common-base</module>
         <module>msb-dongbao-common-util</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 </project>

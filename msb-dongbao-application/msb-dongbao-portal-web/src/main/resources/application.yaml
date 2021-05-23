@@ -29,7 +29,6 @@ mybatis-plus:
   mapper-locations:
   - classpath*:/com/msb/dongbao/ums/mapper/xml/*.xml
   type-aliases-package: com.msb.dongbao.ums.entity
-
 kaptcha:
   height: 50
   width: 200
@@ -48,4 +47,5 @@ kaptcha:
     enabled: true
     color: black
     thickness: 1
-
+server:
+  port: 8081
