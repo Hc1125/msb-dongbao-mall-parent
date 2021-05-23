@@ -14,6 +14,7 @@
         <module name="msb-dongbao-cms" />
         <module name="msb-dongbao-dictionary" />
         <module name="msb-dongbao-cart" />
+        <module name="ca-web2" />
         <module name="msb-dongbao-pay" />
         <module name="msb-dongbao-sms-api" />
         <module name="msb-dongbao-oms" />
@@ -21,17 +22,20 @@
         <module name="msb-dongbao-common-base" />
         <module name="msb-dongbao-manager-web" />
         <module name="msb-dongbao-oms-api" />
+        <module name="ca-web" />
         <module name="msb-dongbao-ums" />
-        <module name="msb-dongbao-sms" />
+        <module name="msb-dongbao-cart-api" />
         <module name="msb-dongbao-pms-api" />
         <module name="msb-dongbao-cms-api" />
-        <module name="msb-dongbao-cart-api" />
+        <module name="msb-dongbao-sms" />
         <module name="msb-dongbao-dictionary-api" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ca-web" options="-parameters" />
+      <module name="ca-web2" options="-parameters" />
       <module name="msb-dongbao-cart" options="-parameters" />
       <module name="msb-dongbao-cart-api" options="-parameters" />
       <module name="msb-dongbao-cms" options="-parameters" />

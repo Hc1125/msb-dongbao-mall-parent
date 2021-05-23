@@ -26,6 +26,8 @@
         <option value="$PROJECT_DIR$/msb-dongbao-service/msb-dongbao-oms/pom.xml" />
         <option value="$PROJECT_DIR$/msb-dongbao-service/msb-dongbao-pms/pom.xml" />
         <option value="$PROJECT_DIR$/msb-dongbao-service/msb-dongbao-dictionary/pom.xml" />
+        <option value="$PROJECT_DIR$/msb-dongbao-application/ca-web/pom.xml" />
+        <option value="$PROJECT_DIR$/msb-dongbao-application/ca-web2/pom.xml" />
       </list>
     </option>
   </component>
