@@ -16,62 +16,81 @@ import java.util.Map;
 public class ApiSafeController {
 
     @GetMapping("/hello")
-    public String hello() {
-        return "hello api safe";
+    public String hello(){
+        return  "hello api safe";
     }
 
+    /**
+     * 测试 get 方法 参数防篡改
+     * @return
+     */
     @RequestMapping("/get-test")
-    public String getTest(String appId, String name, String sign, long timestamp, HttpServletRequest httpServletRequest) {
+    public String getTest(String appId, String name , String sign , long timestamp , HttpServletRequest httpServletRequest){
 
-        HashMap<String, Object> map = new HashMap<>();
-//        map.put("appId", appId);
-//        map.put("name", name);
-//        map.put("timestamp", timestamp);
+        // 为了排序
+        HashMap<String,String> map= new HashMap<>();
+
+        // 参数写死
+//		map.put("appId",appId);
+//		map.put("name",name);
+//		map.put("timestamp",timestamp);
+
         // 获取get中的参数
         Enumeration<String> parameterNames = httpServletRequest.getParameterNames();
-        while (parameterNames.hasMoreElements()) {
-            // 获取name
-            String parametername = parameterNames.nextElement();
+        while (parameterNames.hasMoreElements()){
+            //获取 name
+            String parametename = parameterNames.nextElement();
 
             // 获取值
-            String parameterValue = httpServletRequest.getParameter(parametername);
-            map.put(parametername, parameterValue);
+            String parameterValue = httpServletRequest.getParameter(parametename);
+            map.put(parametename,parameterValue);
         }
 
         // 让接口在有效期内访问
-//        long time = System.currentTimeMillis() - timestamp;
-//        if (time > 1000 * 60) {
-//            return "接口过期了";
-//        }
+//		long time = System.currentTimeMillis() - timestamp;
+//		if (time > 1000 * 30){
+//			return "接口过期了";
+//		}
+
         String s = CheckUtils.generatorSign(map);
-        if (s.equals(sign)) {
+        if (s.equals(sign)){
             return "校验通过";
-        } else {
+        }else {
             return "校验 不通过";
         }
+
+
     }
-    @PostMapping("/post-test")
-    public String postTest(@RequestBody SignDTO signDTO) {
+
+
+    @PutMapping("/post-test")
+    public String postTest(@RequestBody SignDTO signDTO){
+        System.out.println("进入controller方法");
+
         JSONObject obj = JSONUtil.parseObj(signDTO);
+        System.out.println("controller参数："+ obj);
 
-        // 参数转map
-        Map<String, Object> stringObjectMap = Convert.toMap(String.class, Object.class, obj);
 
-        // 排序
-        Map<String, Object> stringObjectMap1 = CheckUtils.sortMapByKey(stringObjectMap);
 
-        System.out.println(stringObjectMap1);
-        // map生成签名
-        // 客户端传来的
-        Object signClient = stringObjectMap1.get("sign");
+//		// 参数转map
+//		Map<String, String> stringObjectMap = Convert.toMap(String.class, Object.class, obj);
+//		// 排序
+//		Map<String, String> stringObjectMap1 = CheckUtils.sortMapByKey(stringObjectMap);
+//		System.out.println(stringObjectMap1);
+//
+//		// map生成签名
+//		// 客户端传来的
+//		Object signClient = stringObjectMap1.get("sign");
+//		String signServer = CheckUtils.generatorSign(stringObjectMap1);
+//
+//		// 判断签名
+//		if (signServer.equals(signClient)){
+//			return "校验通过";
+//		}else {
+//			return "校验 不通过";
+//		}
 
-        String signServer = CheckUtils.generatorSign(stringObjectMap1);
+        return "controller";
 
-        // 判断签名
-        if (signClient.equals(signServer)) {
-            return "校验通过";
-        } else {
-            return "校验 不通过";
-        }
     }
 }

@@ -14,9 +14,8 @@
         <module name="msb-dongbao-common-util" />
         <module name="msb-dongbao-dictionary" />
         <module name="msb-dongbao-cart" />
-        <module name="msb-dongbao-cart-api" />
         <module name="msb-dongbao-pay" />
-        <module name="msb-dongbao-sms-api" />
+        <module name="msb-dongbao-cart-api" />
         <module name="msb-dongbao-oms" />
         <module name="msb-dongbao-pms" />
         <module name="msb-dongbao-common-base" />
@@ -24,6 +23,7 @@
         <module name="msb-dongbao-oms-api" />
         <module name="ca-web" />
         <module name="msb-dongbao-ums" />
+        <module name="msb-dongbao-sms-api" />
         <module name="msb-dongbao-ums-api" />
         <module name="msb-dongbao-pms-api" />
         <module name="msb-dongbao-cms-api" />
